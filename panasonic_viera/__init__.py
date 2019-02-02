@@ -285,4 +285,7 @@ class RemoteControl:
     def hdmi4(self):
         """Send switch to hdmi4."""
         self.send_key(Keys.hdmi4)
-        
+
+    def tv(self):
+        """Send switch to hdmi4."""
+        self.send_key(Keys.tv)
