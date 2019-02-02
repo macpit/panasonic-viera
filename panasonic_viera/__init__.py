@@ -269,3 +269,20 @@ class RemoteControl:
     def media_previous_track(self):
         """Send the previous track command."""
         self.send_key(Keys.rewind)
+
+    def hdmi1(self):
+        """Send switch to hdmi1."""
+        self.send_key(Keys.hdmi1)
+
+    def hdmi2(self):
+        """Send switch to hdmi2."""
+        self.send_key(Keys.hdmi2)
+
+    def hdmi3(self):
+        """Send switch to hdmi3."""
+        self.send_key(Keys.hdmi3)
+
+    def hdmi4(self):
+        """Send switch to hdmi4."""
+        self.send_key(Keys.hdmi4)
+        
