@@ -4,6 +4,7 @@ import logging
 import random
 import socket
 import xml.etree.ElementTree as ET
+from time import sleep
 from urllib.request import urlopen, Request
 
 _LOGGER = logging.getLogger(__name__)
@@ -212,6 +213,7 @@ class RemoteControl:
                   '<DesiredVolume>{}</DesiredVolume>').format(volume)
         self.soap_request(URL_CONTROL_DMR, URN_RENDERING_CONTROL,
                           'SetVolume', params)
+        sleep(1)
 
     def get_mute(self):
         """Return if the TV is muted."""
@@ -241,6 +243,11 @@ class RemoteControl:
     def turn_off(self):
         """Turn off media player."""
         self.send_key(Keys.power)
+
+    def turn_on(self):
+        """Turn off media player."""
+        self.send_key(Keys.power)
+        sleep(5)
 
     def volume_up(self):
         """Volume up the media player."""
@@ -273,19 +280,24 @@ class RemoteControl:
     def hdmi1(self):
         """Send switch to hdmi1."""
         self.send_key(Keys.hdmi1)
+        sleep(2)
 
     def hdmi2(self):
         """Send switch to hdmi2."""
         self.send_key(Keys.hdmi2)
+        sleep(2)
 
     def hdmi3(self):
         """Send switch to hdmi3."""
         self.send_key(Keys.hdmi3)
+        sleep(2)
 
     def hdmi4(self):
         """Send switch to hdmi4."""
         self.send_key(Keys.hdmi4)
+        sleep(2)
 
     def tv(self):
         """Send switch to hdmi4."""
         self.send_key(Keys.tv)
+        sleep(2)
